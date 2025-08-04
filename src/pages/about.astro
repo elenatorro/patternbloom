@@ -1,34 +1,68 @@
 ---
 import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
+import profileImage from "@/assets/profile.jpg";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
 
 // Filter team entries with 'draft: false' & date before current date
-const publishedTeamMembers = await getCollection("team", ({ data }) => {
-  return !data.draft && data.publishDate < new Date();
-});
+// const publishedTeamMembers = await getCollection("team", ({ data }) => {
+//   return !data.draft && data.publishDate < new Date();
+// });
 ---
 
 <Layout title="About">
   <Container>
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
-      <Fragment slot="desc">We are a small passionate team.</Fragment>
+      <Fragment slot="desc">
+        Download free geometric patterns for coloring
+      </Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        What is PatternBloom?
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        PatternBloom is a creative haven for anyone who loves the relaxing art of coloring. Here, you’ll find a growing collection of ready-to-print black-and-white geometric patterns, each designed to inspire creativity, promote mindfulness, and bring a sense of calm to your day
       </p>
     </div>
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        How the Patterns Are Made
+      </h2>
+      <p class="text-lg leading-relaxed text-slate-500">
+        All the patterns on this blog are created using generative art, primarily with the p5.js library. Generative art involves writing code to generate designs using mathematical rules, randomness, and algorithms. Unlike AI, which uses machine learning to analyze and replicate existing styles or patterns, generative art is rooted in the direct control of the artist, blending logic and creativity to produce unique, intentional designs.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        This approach allows for infinite possibilities while ensuring every pattern is thoughtfully crafted to be enjoyable and engaging for coloring.
+    </div>
+
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <h2 class="font-bold text-3xl text-gray-800">
+        About the Author
+      </h2>
+      <div class="py-6 md:order-1 hidden md:block max-w-xs">
+        <Picture
+          src={profileImage}
+          alt="Profile Image"
+          widths={[200, 400, 600]}
+          loading="eager"
+          format="avif"
+        />
+      </div>
+      <p class="text-lg leading-relaxed text-slate-500">
+        This blog is the side project of Elena Torró, a software engineer from Murcia, Spain, who is passionate about generative art, open source, and exploring the fascinating intersection of art and technology. Through this blog, Elena combines her technical expertise and artistic curiosity to share designs that inspire relaxation and creativity.
+      </p>
+      <p class="text-lg leading-relaxed text-slate-500">
+        Thank you for visiting, and happy coloring!
+      </p>
+    </div>
+
+    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
       {
         publishedTeamMembers.map((teamMemberEntry) => (
           <div class="group">
@@ -52,6 +86,6 @@ const publishedTeamMembers = await getCollection("team", ({ data }) => {
           </div>
         ))
       }
-    </div>
+    </div> -->
   </Container>
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets";
-import heroImage from "@/assets/hero.png";
+import flowersImage from "@/assets/flowers.png";
+
 import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
@@ -9,8 +10,8 @@ import { Icon } from "astro-icon/components";
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
+      src={flowersImage}
+      alt="Flowers pattern"
       widths={[200, 400, 600]}
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
@@ -20,12 +21,10 @@ import { Icon } from "astro-icon/components";
   <div>
     <h1
       class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
+      PatternBloom
     </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
-      any website with this starter.
+    <p class="text-3xl mt-4 text-slate-600 max-w-xl">
+      Unleash your inner artist: explore, color, and transform free geometric prints into stunning custom designs
     </p>
     <div class="mt-6 flex flex-col sm:flex-row gap-3">
       <Link
@@ -35,7 +34,6 @@ import { Icon } from "astro-icon/components";
         class="flex gap-1 items-center justify-center"
         rel="noopener">
         <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
         Download for Free
       </Link>
       <Link
