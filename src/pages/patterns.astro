@@ -4,6 +4,7 @@ import { Picture } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
+import DownloadIcon from '@/components/ui/icons/download.astro';
 
 // Filter patterns entries with 'draft: false' & date before current date
 const publishedPatternsEntries = await getCollection("patterns", ({ data }) => {
@@ -31,16 +32,21 @@ publishedPatternsEntries.sort(function (a, b) {
             <li>
               <a href={`/patterns/${patternsPostEntry.slug}`}>
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <Picture
-                    src={patternsPostEntry.data.image.src}
-                    alt={patternsPostEntry.data.image.alt}
-                    sizes="(max-width: 800px) 100vw, 800px"
-                    width={800}
-                    height={600}
-                    loading={index <= 2 ? "eager" : "lazy"}
-                    decoding={index <= 2 ? "sync" : "async"}
-                    class="w-full rounded-md object-cover object-center bg-white"
-                  />
+                  <div class="relative">
+                    <Picture
+                      src={patternsPostEntry.data.image.src}
+                      alt={patternsPostEntry.data.image.alt}
+                      sizes="(max-width: 800px) 100vw, 800px"
+                      width={800}
+                      height={600}
+                      loading={index <= 2 ? "eager" : "lazy"}
+                      decoding={index <= 2 ? "sync" : "async"}
+                      class="w-full rounded-md object-cover object-center bg-white pattern-preview-img"
+                    />
+                    <div class="absolute top-4 right-4 bg-white bg-opacity-70 rounded-full p-2 shadow-md">
+                      <DownloadIcon />
+                    </div>
+                  </div>
                   <div>
                     <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
                       {patternsPostEntry.data.category}
@@ -71,3 +77,37 @@ publishedPatternsEntries.sort(function (a, b) {
     </main>
   </Container>
 </Layout>
+
+<style>
+.pattern-preview-img {
+  position: relative;
+}
+.pattern-download-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  padding: 0.25rem;
+  box-shadow: 0 2px 8px rgba(120, 80, 180, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.grid.md\:grid-cols-2 {
+  position: relative;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  display: none !important;
+}
+</style>
