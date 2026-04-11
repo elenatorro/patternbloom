@@ -3,36 +3,32 @@ import Link from "@/components/ui/link.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<main
-  class="pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="bg-[var(--color-mint)] border-3 border-black p-8 md:p-12 shadow-[6px_6px_0px_#000]">
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-black lg:tracking-tight xl:tracking-tighter text-black">
-      PatternBloom
-    </h1>
-    <p class="text-lg mt-4 text-black font-bold max-w-xl">
-      Procedural art by Elena Torr&oacute;
-    </p>
-    <p class="text-xl mt-4 text-black max-w-xl">
-      Exploring the intersection of code, mathematics, and visual art through generative and procedural techniques.
-    </p>
-    <div class="mt-8 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="/portfolio"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-black w-5 h-5" name="bx:bxs-palette" />
-        View Portfolio
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="/blog"
-        class="flex gap-1 items-center justify-center">
-        <Icon class="text-black w-4 h-4" name="bx:bx-book-reader" />
-        Read the Blog
-      </Link>
-    </div>
+<main class="pt-20 pb-16 md:pt-28 md:pb-32">
+  <p class="text-sm font-semibold uppercase tracking-widest text-[var(--color-coral)] mb-4">
+    Procedural Art &mdash; Elena Torr&oacute;
+  </p>
+  <h1 class="font-display text-5xl lg:text-7xl xl:text-8xl font-extrabold leading-[0.95] tracking-tight text-[var(--color-ink)]">
+    Pattern<br/>Bloom
+  </h1>
+  <p class="text-lg mt-6 text-[var(--color-ink)]/70 max-w-md leading-relaxed">
+    Exploring the intersection of code, mathematics, and visual art through generative and procedural techniques.
+  </p>
+  <div class="mt-8 flex flex-col sm:flex-row gap-3">
+    <Link
+      href="/portfolio"
+      class="flex gap-2 items-center justify-center"
+      rel="noopener">
+      <Icon class="w-4 h-4" name="bx:bxs-palette" />
+      Portfolio
+    </Link>
+    <Link
+      size="lg"
+      style="outline"
+      rel="noopener"
+      href="/blog"
+      class="flex gap-2 items-center justify-center">
+      <Icon class="w-4 h-4" name="bx:bx-book-reader" />
+      Blog
+    </Link>
   </div>
 </main>

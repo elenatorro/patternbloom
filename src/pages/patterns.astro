@@ -26,42 +26,33 @@ publishedPatternsEntries.sort(function (a, b) {
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
-      <ul class="grid gap-8 max-w-4xl mx-auto">
+      <ul class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {
           publishedPatternsEntries.map((patternsPostEntry, index) => (
             <li>
-              <a href={`/patterns/${patternsPostEntry.slug}`} class="block bg-white border-3 border-black p-6 shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150">
-                <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-                  <div class="relative">
-                    <Picture
-                      src={patternsPostEntry.data.image.src}
-                      alt={patternsPostEntry.data.image.alt}
-                      sizes="(max-width: 800px) 100vw, 800px"
-                      width={800}
-                      height={600}
-                      loading={index <= 2 ? "eager" : "lazy"}
-                      decoding={index <= 2 ? "sync" : "async"}
-                      class="w-full object-cover object-center bg-white border-3 border-black"
-                    />
-                    <div class="absolute top-4 right-4 bg-[var(--color-sunny)] border-2 border-black p-2">
-                      <DownloadIcon />
-                    </div>
+              <a href={`/patterns/${patternsPostEntry.slug}`} class="group block bg-white hover:bg-gray-50 transition-colors">
+                <div class="relative">
+                  <Picture
+                    src={patternsPostEntry.data.image.src}
+                    alt={patternsPostEntry.data.image.alt}
+                    sizes="(max-width: 800px) 100vw, 400px"
+                    width={400}
+                    height={400}
+                    loading={index <= 3 ? "eager" : "lazy"}
+                    decoding={index <= 3 ? "sync" : "async"}
+                    class="w-full aspect-square object-cover object-center bg-white"
+                  />
+                  <div class="absolute top-3 right-3 bg-[var(--color-sunny)] p-2">
+                    <DownloadIcon />
                   </div>
-                  <div>
-                    <span class="bg-[var(--color-sky)] text-black border-2 border-black px-2 py-0.5 text-xs font-black uppercase tracking-wider">
-                      {patternsPostEntry.data.category}
-                    </span>
-
-                    <h2 class="text-3xl font-black leading-snug tracking-tight mt-2 text-black">
-                      {patternsPostEntry.data.title}
-                    </h2>
-
-                    <div class="flex gap-2 mt-3">
-                      <span class="text-black font-medium">
-                        {patternsPostEntry.data.author}
-                      </span>
-                    </div>
-                  </div>
+                </div>
+                <div class="p-4">
+                  <span class="text-xs font-semibold uppercase tracking-widest text-[var(--color-coral)]">
+                    {patternsPostEntry.data.category}
+                  </span>
+                  <h2 class="font-display text-lg font-bold leading-snug tracking-tight mt-1 text-[var(--color-ink)] group-hover:text-[var(--color-coral)] transition-colors">
+                    {patternsPostEntry.data.title}
+                  </h2>
                 </div>
               </a>
             </li>

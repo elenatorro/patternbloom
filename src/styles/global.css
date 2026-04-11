@@ -4,17 +4,21 @@
 
 @theme {
   --font-sans:
-    'Bricolage Grotesque Variable', 'Bricolage Grotesque',
     Inter Variable, Inter, ui-sans-serif,
     system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
 
-  --color-cream: #FFF8F0;
+  --font-display:
+    'Bricolage Grotesque Variable', 'Bricolage Grotesque',
+    ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #FAFAFA;
   --color-coral: #FF6B6B;
   --color-sunny: #FFD93D;
-  --color-lavender: #C3AED6;
-  --color-mint: #B8F2E6;
-  --color-sky: #A8D8EA;
+  --color-lavender: #D4C1EC;
+  --color-mint: #A8E6CF;
+  --color-sky: #87CEEB;
+  --color-ink: #1A1A1A;
 }
 
 @layer base {
@@ -27,6 +31,7 @@
   }
 
   body {
-    background-color: var(--color-cream);
+    background-color: var(--color-bg);
+    color: var(--color-ink);
   }
 }

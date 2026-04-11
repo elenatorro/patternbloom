@@ -21,55 +21,48 @@ const { Content } = await entry.render();
 
 <Layout title={entry.data.title}>
   <Container>
-    <div class="mx-auto max-w-3xl mt-14">
-      <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+    <div class="mx-auto max-w-3xl mt-14 bg-white/90 p-8 md:p-12">
+      <span class="text-xs font-semibold uppercase tracking-widest text-[var(--color-coral)]">
         {entry.data.category}
       </span>
       <h1
-        class="text-4xl lg:text-5xl font-bold lg:tracking-tight mt-1 lg:leading-tight">
+        class="font-display text-4xl lg:text-5xl font-extrabold lg:tracking-tight mt-2 lg:leading-tight text-[var(--color-ink)]">
         {entry.data.title}
       </h1>
-      <div class="flex gap-2 mt-3 items-center flex-wrap md:flex-nowrap">
-        <span class="text-gray-400">
+      <div class="flex gap-3 mt-4 items-center flex-wrap md:flex-nowrap border-b border-gray-200 pb-4">
+        <span class="text-[var(--color-ink)]/60 text-sm">
           {entry.data.author}
         </span>
-        <!-- <span class="text-gray-400">•</span> -->
-        <!-- <time
-          class="text-gray-400"
-          datetime={entry.data.publishDate.toISOString()}>
-          {entry.data.publishDate.toDateString()}
-        </time> -->
-        <!-- <span class="text-gray-400 hidden md:block">•</span> -->
-        <div class="w-full md:w-auto flex flex-wrap gap-3">
+        <div class="w-full md:w-auto flex flex-wrap gap-2">
           {
             entry.data.tags.map((tag) => (
-              <span class="text-sm text-gray-500">#{tag}</span>
+              <span class="bg-[var(--color-sunny)] text-[var(--color-ink)] px-2 py-0.5 text-xs font-semibold">#{tag}</span>
             ))
           }
         </div>
       </div>
-    </div>
 
-    <div class="mx-auto prose prose-lg mt-6 max-w-3xl">
-      <Picture
-        src={entry.data.image.src}
-        alt={entry.data.image.alt}
-        sizes="(max-width: 800px) 100vw, 800px"
-        width={800}
-        height={600}
-        loading="lazy"
-        decoding="async"
-        class="w-full rounded-md object-cover object-center bg-white visually-hidden"
-        style="display:none;"
-      />
-      <Content />
-    </div>
-    <div class="text-center mt-8">
-      <a
-        href="/patterns"
-        class="bg-gray-100 px-5 py-3 rounded-md hover:bg-gray-200 transition"
-        >← Back to Patterns</a
-      >
+      <div class="prose prose-lg mt-8 max-w-3xl">
+        <Picture
+          src={entry.data.image.src}
+          alt={entry.data.image.alt}
+          sizes="(max-width: 800px) 100vw, 800px"
+          width={800}
+          height={600}
+          loading="lazy"
+          decoding="async"
+          class="w-full rounded-md object-cover object-center bg-white visually-hidden"
+          style="display:none;"
+        />
+        <Content />
+      </div>
+      <div class="text-center mt-12">
+        <a
+          href="/patterns"
+          class="inline-block text-sm font-semibold uppercase tracking-widest text-[var(--color-ink)] border-b-2 border-[var(--color-coral)] pb-1 hover:text-[var(--color-coral)] transition-colors"
+          >&larr; Back to Patterns</a
+        >
+      </div>
     </div>
   </Container>
 </Layout>
