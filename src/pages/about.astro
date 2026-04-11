@@ -15,45 +15,46 @@ import Sectionhead from "@/components/sectionhead.astro";
       </Fragment>
     </Sectionhead>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
+    <div class="mx-auto max-w-4xl mt-16 bg-[var(--color-mint)] border-3 border-black p-8 shadow-[4px_4px_0px_#000]">
+      <h2 class="font-black text-3xl text-black">
         What is PatternBloom?
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-black mt-3">
         PatternBloom is a personal brand for procedural art projects. It’s a space to share generative designs, open-source tools, and experiments at the intersection of code and visual art.
       </p>
     </div>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
+    <div class="mx-auto max-w-4xl mt-8 bg-[var(--color-sunny)] border-3 border-black p-8 shadow-[4px_4px_0px_#000]">
+      <h2 class="font-black text-3xl text-black">
         How the Art Is Made
       </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-black mt-3">
         All the work on PatternBloom is created using generative and procedural techniques, primarily with the p5.js library. This involves writing code to produce designs through mathematical rules, randomness, and algorithms. Unlike AI-generated art, procedural art is rooted in the direct control of the artist, blending logic and creativity to produce unique, intentional pieces.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-black mt-3">
         This approach allows for infinite possibilities while ensuring every piece is thoughtfully crafted.
       </p>
     </div>
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
+    <div class="mx-auto max-w-4xl mt-8 bg-[var(--color-sky)] border-3 border-black p-8 shadow-[4px_4px_0px_#000]">
+      <h2 class="font-black text-3xl text-black">
         About the Author
       </h2>
-      <div class="py-6 md:order-1 hidden md:block max-w-xs">
+      <div class="py-6 hidden md:block max-w-xs">
         <Picture
           src={profileImage}
           alt="Elena Torró"
           widths={[200, 400, 600]}
           loading="eager"
           format="avif"
+          class="border-3 border-black shadow-[4px_4px_0px_#000]"
         />
       </div>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <p class="text-lg leading-relaxed text-black mt-3">
         PatternBloom is the creative outlet of Elena Torró, a software engineer from Murcia, Spain, who is passionate about generative art, open source, and the fascinating intersection of art and technology. Through PatternBloom, Elena combines her technical expertise and artistic curiosity to explore procedural techniques and share the results.
       </p>
-      <p class="text-lg leading-relaxed text-slate-500">
-        You can find more at <a href="https://elenatorro.com" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">elenatorro.com</a>.
+      <p class="text-lg leading-relaxed text-black mt-3">
+        You can find more at <a href="https://elenatorro.com" target="_blank" rel="noopener" class="font-bold underline hover:text-[var(--color-coral)]">elenatorro.com</a>.
       </p>
     </div>
   </Container>

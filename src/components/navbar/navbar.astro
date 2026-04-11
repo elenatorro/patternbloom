@@ -21,13 +21,13 @@ const menuitems = [
 ---
 
 <Container>
-  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5 bg-white border-3 border-black px-5 py-3 shadow-[4px_4px_0px_#000]">
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
-        <a href="/" class="text-lg"><span class="font-bold text-slate-800">PatternBloom</span>
+        <a href="/" class="text-lg"><span class="font-black text-black tracking-tight">PatternBloom</span>
         </a>
         <div class="block lg:hidden">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="w-4 h-4 text-black" />
         </div>
       </div>
       <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
@@ -47,10 +47,10 @@ const menuitems = [
                   <li>
                     <a
                       href={item.path}
-                      class="flex lg:px-3 py-2 items-center text-gray-600 hover:text-gray-900">
+                      class="flex lg:px-3 py-2 items-center text-black font-bold hover:text-[var(--color-coral)] transition-colors">
                       <span> {item.title}</span>
                       {item.badge && (
-                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-indigo-600 rounded-full">
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-black bg-[var(--color-sunny)] border-2 border-black">
                           New
                         </span>
                       )}
@@ -61,9 +61,6 @@ const menuitems = [
             ))
           }
         </ul>
-        <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
-          <Link href="#" style="muted" block size="md">Custom Link</Link>
-        </div> -->
       </MenuItems>
     </Astronav>
   </header>

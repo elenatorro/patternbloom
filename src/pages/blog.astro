@@ -24,37 +24,37 @@ publishedPosts.sort(function (a, b) {
 
     <main class="mt-16">
       {publishedPosts.length === 0 && (
-        <p class="text-center text-lg text-slate-500">
+        <p class="text-center text-lg text-black font-medium">
           No posts yet. Stay tuned.
         </p>
       )}
-      <ul class="grid gap-16 max-w-4xl mx-auto">
+      <ul class="grid gap-8 max-w-4xl mx-auto">
         {
           publishedPosts.map((post) => (
             <li>
-              <a href={`/blog/${post.slug}`}>
+              <a href={`/blog/${post.slug}`} class="block bg-white border-3 border-black p-6 shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150">
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   {post.data.image && (
                     <div>
                       <img
                         src={post.data.image.src}
                         alt={post.data.image.alt}
-                        class="w-full rounded-md object-cover object-center bg-white"
+                        class="w-full object-cover object-center border-3 border-black"
                         loading="lazy"
                       />
                     </div>
                   )}
                   <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                    <span class="bg-[var(--color-lavender)] text-black border-2 border-black px-2 py-0.5 text-xs font-black uppercase tracking-wider">
                       {post.data.category}
                     </span>
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1">
+                    <h2 class="text-3xl font-black leading-snug tracking-tight mt-2 text-black">
                       {post.data.title}
                     </h2>
-                    <p class="text-slate-500 mt-2">{post.data.snippet}</p>
+                    <p class="text-black mt-2">{post.data.snippet}</p>
                     <div class="flex gap-2 mt-3">
                       <time
-                        class="text-gray-400"
+                        class="text-black font-medium text-sm"
                         datetime={post.data.publishDate.toISOString()}>
                         {post.data.publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                       </time>

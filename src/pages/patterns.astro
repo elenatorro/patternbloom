@@ -26,11 +26,11 @@ publishedPatternsEntries.sort(function (a, b) {
       </Fragment>
     </Sectionhead>
     <main class="mt-16">
-      <ul class="grid gap-16 max-w-4xl mx-auto">
+      <ul class="grid gap-8 max-w-4xl mx-auto">
         {
           publishedPatternsEntries.map((patternsPostEntry, index) => (
             <li>
-              <a href={`/patterns/${patternsPostEntry.slug}`}>
+              <a href={`/patterns/${patternsPostEntry.slug}`} class="block bg-white border-3 border-black p-6 shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] transition-all duration-150">
                 <div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
                   <div class="relative">
                     <Picture
@@ -41,31 +41,25 @@ publishedPatternsEntries.sort(function (a, b) {
                       height={600}
                       loading={index <= 2 ? "eager" : "lazy"}
                       decoding={index <= 2 ? "sync" : "async"}
-                      class="w-full rounded-md object-cover object-center bg-white pattern-preview-img"
+                      class="w-full object-cover object-center bg-white border-3 border-black"
                     />
-                    <div class="absolute top-4 right-4 bg-white bg-opacity-70 rounded-full p-2 shadow-md">
+                    <div class="absolute top-4 right-4 bg-[var(--color-sunny)] border-2 border-black p-2">
                       <DownloadIcon />
                     </div>
                   </div>
                   <div>
-                    <span class="text-blue-400 uppercase tracking-wider text-sm font-medium">
+                    <span class="bg-[var(--color-sky)] text-black border-2 border-black px-2 py-0.5 text-xs font-black uppercase tracking-wider">
                       {patternsPostEntry.data.category}
                     </span>
 
-                    <h2 class="text-3xl font-semibold leading-snug tracking-tight mt-1 ">
+                    <h2 class="text-3xl font-black leading-snug tracking-tight mt-2 text-black">
                       {patternsPostEntry.data.title}
                     </h2>
 
                     <div class="flex gap-2 mt-3">
-                      <span class="text-gray-400">
+                      <span class="text-black font-medium">
                         {patternsPostEntry.data.author}
                       </span>
-                      {/* <span class="text-gray-400">• </span> */}
-                      {/* <time
-                        class="text-gray-400"
-                        datetime={patternsPostEntry.data.publishDate.toISOString()}>
-                        {patternsPostEntry.data.publishDate.toDateString()}
-                      </time> */}
                     </div>
                   </div>
                 </div>

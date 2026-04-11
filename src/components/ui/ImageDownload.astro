@@ -16,30 +16,30 @@ const { src, alt, filename = "download.png" } = Astro.props;
   align-items: center;
   gap: 1rem;
   padding: 2rem;
-  background: #f9f6ff;
-  box-shadow: 0 4px 16px rgba(120, 80, 180, 0.10);
+  background: var(--color-cream);
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px #000;
 }
 .image-download-preview {
   width: 100%;
-  box-shadow: 0 2px 8px rgba(120, 80, 180, 0.12);
+  border: 3px solid #000;
 }
 .image-download-btn {
   display: inline-block;
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
-  background: linear-gradient(90deg, #a18aff 0%, #ffb6b9 100%);
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  border-radius: 0.75rem;
+  background: var(--color-coral);
+  color: #000;
+  font-weight: 900;
+  border: 3px solid #000;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
-  box-shadow: 0 2px 8px rgba(120, 80, 180, 0.10);
+  transition: all 0.15s;
+  box-shadow: 4px 4px 0px #000;
 }
 .image-download-btn:hover {
-  background: linear-gradient(90deg, #ffb6b9 0%, #a18aff 100%);
-  transform: scale(1.05);
+  box-shadow: 2px 2px 0px #000;
+  transform: translate(2px, 2px);
 }
 </style>
 
