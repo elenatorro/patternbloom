@@ -21,7 +21,7 @@ const { title } = Astro.props;
 
 const makeTitle = title
   ? title + " | " + "PatternBloom"
-  : "PatternBloom - Unleash your inner artist";
+  : "PatternBloom - Procedural Art by Elena Torró";
 ---
 
 <!doctype html>
@@ -34,17 +34,17 @@ const makeTitle = title
 
     <SEO
       title={makeTitle}
-      description="PatternBloom:  Unleash your inner artist: explore, color, and transform free geometric prints into stunning custom designs"
+      description="PatternBloom: Procedural art by Elena Torró. Exploring the intersection of code, mathematics, and visual art."
       canonical={canonicalURL}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `PatternBloom - Printable Patterns for Coloring`,
+          title: `PatternBloom - Procedural Art by Elena Torró`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "PatternBloom Flowers Logo",
+          alt: "PatternBloom",
         },
       }}
     />

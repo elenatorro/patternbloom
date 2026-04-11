@@ -18,16 +18,18 @@ const patternsCollection = defineCollection({
   }),
 });
 
-const teamCollection = defineCollection({
+const blogCollection = defineCollection({
   schema: z.object({
     draft: z.boolean(),
-    name: z.string(),
     title: z.string(),
-    avatar: z.object({
+    snippet: z.string(),
+    image: z.object({
       src: z.string(),
       alt: z.string(),
-    }),
+    }).optional(),
     publishDate: z.string().transform(str => new Date(str)),
+    category: z.string(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
@@ -35,5 +37,5 @@ const teamCollection = defineCollection({
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'patterns': patternsCollection,
-  'team': teamCollection,
+  'blog': blogCollection,
 };

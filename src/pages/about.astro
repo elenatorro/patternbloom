@@ -1,15 +1,9 @@
 ---
-import { getCollection } from "astro:content";
 import { Picture } from "astro:assets";
 import profileImage from "@/assets/profile.jpg";
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/container.astro";
 import Sectionhead from "@/components/sectionhead.astro";
-
-// Filter team entries with 'draft: false' & date before current date
-// const publishedTeamMembers = await getCollection("team", ({ data }) => {
-//   return !data.draft && data.publishDate < new Date();
-// });
 ---
 
 <Layout title="About">
@@ -17,7 +11,7 @@ import Sectionhead from "@/components/sectionhead.astro";
     <Sectionhead>
       <Fragment slot="title">About</Fragment>
       <Fragment slot="desc">
-        Download free geometric patterns for coloring
+        The person and ideas behind PatternBloom
       </Fragment>
     </Sectionhead>
 
@@ -26,19 +20,20 @@ import Sectionhead from "@/components/sectionhead.astro";
         What is PatternBloom?
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        PatternBloom is a creative haven for anyone who loves the relaxing art of coloring. Here, you’ll find a growing collection of ready-to-print black-and-white geometric patterns, each designed to inspire creativity, promote mindfulness, and bring a sense of calm to your day
+        PatternBloom is a personal brand for procedural art projects. It’s a space to share generative designs, open-source tools, and experiments at the intersection of code and visual art.
       </p>
     </div>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        How the Patterns Are Made
+        How the Art Is Made
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        All the patterns on this patterns are created using generative art, primarily with the p5.js library. Generative art involves writing code to generate designs using mathematical rules, randomness, and algorithms. Unlike AI, which uses machine learning to analyze and replicate existing styles or patterns, generative art is rooted in the direct control of the artist, blending logic and creativity to produce unique, intentional designs.
+        All the work on PatternBloom is created using generative and procedural techniques, primarily with the p5.js library. This involves writing code to produce designs through mathematical rules, randomness, and algorithms. Unlike AI-generated art, procedural art is rooted in the direct control of the artist, blending logic and creativity to produce unique, intentional pieces.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        This approach allows for infinite possibilities while ensuring every pattern is thoughtfully crafted to be enjoyable and engaging for coloring.
+        This approach allows for infinite possibilities while ensuring every piece is thoughtfully crafted.
+      </p>
     </div>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
@@ -48,44 +43,18 @@ import Sectionhead from "@/components/sectionhead.astro";
       <div class="py-6 md:order-1 hidden md:block max-w-xs">
         <Picture
           src={profileImage}
-          alt="Profile Image"
+          alt="Elena Torró"
           widths={[200, 400, 600]}
           loading="eager"
           format="avif"
         />
       </div>
       <p class="text-lg leading-relaxed text-slate-500">
-        This patterns is the side project of Elena Torró, a software engineer from Murcia, Spain, who is passionate about generative art, open source, and exploring the fascinating intersection of art and technology. Through this patterns, Elena combines her technical expertise and artistic curiosity to share designs that inspire relaxation and creativity.
+        PatternBloom is the creative outlet of Elena Torró, a software engineer from Murcia, Spain, who is passionate about generative art, open source, and the fascinating intersection of art and technology. Through PatternBloom, Elena combines her technical expertise and artistic curiosity to explore procedural techniques and share the results.
       </p>
       <p class="text-lg leading-relaxed text-slate-500">
-        Thank you for visiting, and happy coloring!
+        You can find more at <a href="https://elenatorro.com" target="_blank" rel="noopener" class="text-indigo-600 hover:underline">elenatorro.com</a>.
       </p>
     </div>
-
-    <!-- <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      {
-        publishedTeamMembers.map((teamMemberEntry) => (
-          <div class="group">
-            <div class="w-full aspect-square">
-              <Picture
-                src={teamMemberEntry.data.avatar.src}
-                alt={teamMemberEntry.data.avatar.alt}
-                sizes="(max-width: 800px) 100vw, 400px"
-                width={400}
-                height={400}
-                class="w-full rounded-sm transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
-              />
-            </div>
-
-            <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800">{teamMemberEntry.data.name}</h2>
-              <h3 class="text-sm text-slate-500">
-                {teamMemberEntry.data.title}
-              </h3>
-            </div>
-          </div>
-        ))
-      }
-    </div> -->
   </Container>
 </Layout>
